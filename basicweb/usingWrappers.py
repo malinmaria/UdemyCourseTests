@@ -1,5 +1,5 @@
 from selenium import webdriver
-import handyWrappers
+from utilities.handyWrappers import HandyWrappers
 import time
 
 
@@ -10,7 +10,7 @@ class UsingWrappers():
         baseURL = "https://letskodeit.teachable.com/pages/practice"
         driver.maximize_window()
         driver.implicitly_wait(10)
-        hw = handyWrappers(driver)
+        hw = HandyWrappers(driver)
         driver.get(baseURL)
 
         textField1 = hw.getElement("name")
