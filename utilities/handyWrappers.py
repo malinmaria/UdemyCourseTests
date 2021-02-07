@@ -12,8 +12,16 @@ class HandyWrappers():
             return By.ID
         elif locatorType == 'xpath':
             return By.XPATH
+        elif locatorType == "name":
+            return By.NAME
+        elif locatorType == "css":
+            return By.CSS_SELECTOR
+        elif locatorType == "classname":
+            return By.CLASS_NAME
+        elif locatorType == "linktext":
+            return By.LINK_TEXT
         else:
-            print("locator type is not supported")
+            print("locator type " + locatorType + "is not supported")
         return False
 
     def getElement(self, locator, locatorType="id"):
@@ -26,3 +34,8 @@ class HandyWrappers():
         except:
             print("element not found")
         return element
+
+    def isElementPresent(self, locator, byType):
+        element = None
+        try:
+            element.driver.find_element
