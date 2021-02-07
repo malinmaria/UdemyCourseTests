@@ -36,6 +36,26 @@ class HandyWrappers():
         return element
 
     def isElementPresent(self, locator, byType):
-        element = None
         try:
-            element.driver.find_element
+            element = self.driver.find_element(byType, locator)
+            if element is not None:
+                print("Element Found")
+                return True
+            else:
+                return False
+        except:
+            print("Element not found")
+            return False
+
+    def elementPresenceCheck(self, locator, byType):
+        try:
+            elementList = self.driver.find_element(byType, locator)
+            if len(elementList) > 0:
+                print("Element Found")
+                return True
+            else:
+                return False
+        except:
+            print("Element not found")
+            return False
+        
