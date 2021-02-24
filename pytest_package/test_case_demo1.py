@@ -1,8 +1,11 @@
 import pytest
 
-@pytest
-def SetUp():
+
+@pytest.fixture()
+def setUp():
     print("Once before every method")
+    yield
+    print("Once after every method")
 
 def test_methodA(setUp):
     print("Running method A")
